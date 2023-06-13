@@ -8,12 +8,15 @@ import (
 
 	"github.com/pkg/errors"
 	"github.com/zeromicro/go-zero/core/logx"
+	"github.com/zeromicro/go-zero/core/trace"
 	"github.com/zeromicro/go-zero/rest/httpx"
 	"google.golang.org/grpc/status"
 )
 
 // http返回
 func HttpResult(r *http.Request, w http.ResponseWriter, resp interface{}, err error) {
+	w.Header().Set(trace.TraceIdKey, trace.TraceIDFromContext(r.Context()))
+
 	if err == nil {
 		// 成功返回
 		r := Success(resp)
@@ -46,6 +49,7 @@ func HttpResult(r *http.Request, w http.ResponseWriter, resp interface{}, err er
 
 // 授权的http方法
 func AuthHttpResult(r *http.Request, w http.ResponseWriter, resp interface{}, err error) {
+	w.Header().Set(trace.TraceIdKey, trace.TraceIDFromContext(r.Context()))
 	if err == nil {
 		// 成功返回
 		r := Success(resp)
@@ -78,6 +82,7 @@ func AuthHttpResult(r *http.Request, w http.ResponseWriter, resp interface{}, er
 
 // http 参数错误返回
 func ParamErrorResult(r *http.Request, w http.ResponseWriter, err error) {
+	w.Header().Set(trace.TraceIdKey, trace.TraceIDFromContext(r.Context()))
 	errMsg := fmt.Sprintf("%s ,%s", xerr.MapErrMsg(xerr.REUQEST_PARAM_ERROR), err.Error())
 	httpx.WriteJson(w, http.StatusBadRequest, Error(xerr.REUQEST_PARAM_ERROR, errMsg))
 }
