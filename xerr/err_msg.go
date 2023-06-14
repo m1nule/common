@@ -9,9 +9,9 @@ func init() {
 	message[REUQEST_PARAM_ERROR] = "参数错误"
 	message[TOKEN_EXPIRE_ERROR] = "token失效，请重新登陆"
 	message[TOKEN_GENERATE_ERROR] = "生成token失败"
-	message[DB_ERROR] = "MYSQL数据库错误"
-	message[MONGODB_ERROR] = "MONGODB数据库错误"
-	message[REDIS_ERROR] = "REDIS数据库错误"
+	message[DB_ERROR] = "数据库错误(m)"
+	message[MONGODB_ERROR] = "数据库错误(mg)"
+	message[REDIS_ERROR] = "数据库错误(r)"
 }
 
 func MapErrMsg(errcode uint32) string {
