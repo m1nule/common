@@ -103,6 +103,6 @@ func getHttpCode(gCode codes.Code) int {
 	case codes.DeadlineExceeded:
 		return http.StatusRequestTimeout
 	default:
-		return http.StatusInternalServerError
+		return http.StatusBadRequest
 	}
 }
