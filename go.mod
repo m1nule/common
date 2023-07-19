@@ -3,6 +3,7 @@ module github.com/m1nule/common
 go 1.19
 
 require (
+	github.com/golang-module/dongle v0.2.8
 	github.com/pkg/errors v0.9.1
 	github.com/zeromicro/go-zero v1.5.3
 	google.golang.org/grpc v1.55.0
@@ -12,6 +13,7 @@ require (
 	github.com/beorn7/perks v1.0.1 // indirect
 	github.com/cenkalti/backoff/v4 v4.2.0 // indirect
 	github.com/cespare/xxhash/v2 v2.2.0 // indirect
+	github.com/emmansun/gmsm v0.15.5 // indirect
 	github.com/fatih/color v1.15.0 // indirect
 	github.com/go-logr/logr v1.2.3 // indirect
 	github.com/go-logr/stdr v1.2.2 // indirect
@@ -39,6 +41,7 @@ require (
 	go.opentelemetry.io/otel/trace v1.14.0 // indirect
 	go.opentelemetry.io/proto/otlp v0.19.0 // indirect
 	go.uber.org/automaxprocs v1.5.2 // indirect
+	golang.org/x/crypto v0.6.0 // indirect
 	golang.org/x/net v0.10.0 // indirect
 	golang.org/x/sys v0.8.0 // indirect
 	golang.org/x/text v0.9.0 // indirect
