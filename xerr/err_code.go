@@ -11,4 +11,6 @@ const (
 	DB_ERROR             uint32 = 1005
 	MONGODB_ERROR        uint32 = 1006
 	REDIS_ERROR          uint32 = 1007
+
+	NETWORK_ERROR uint32 = 2001
 )
